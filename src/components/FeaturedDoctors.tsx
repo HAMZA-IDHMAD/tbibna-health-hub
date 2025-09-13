@@ -168,10 +168,11 @@ const FeaturedDoctors = () => {
 
                     {/* Action Buttons */}
                     <div className="flex space-x-2">
-                      <Button 
-                        className="flex-1 bg-gradient-primary hover:opacity-90"
-                        size="sm"
-                      >
+                  <Button 
+                    className="flex-1 bg-gradient-primary hover:opacity-90"
+                    size="sm"
+                    onClick={() => window.location.href = `/doctor/${doctor.id}`}
+                  >
                         <Calendar className="h-4 w-4 mr-2" />
                         Rendez-vous
                       </Button>

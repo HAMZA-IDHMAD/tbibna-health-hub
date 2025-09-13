@@ -16,7 +16,7 @@ const Navigation = () => {
         {/* Desktop Navigation */}
         <div className="mr-6 hidden md:flex items-center space-x-6 text-sm font-medium">
           <a 
-            href="#home" 
+            href="/" 
             className="transition-colors hover:text-primary text-foreground"
           >
             Accueil
@@ -32,6 +32,12 @@ const Navigation = () => {
             className="transition-colors hover:text-primary text-muted-foreground"
           >
             Médecins
+          </a>
+          <a 
+            href="/medicine" 
+            className="transition-colors hover:text-primary text-muted-foreground"
+          >
+            Pharmacie
           </a>
           <a 
             href="#about" 
