@@ -28,7 +28,7 @@ const Navigation = () => {
             Services
           </a>
           <a 
-            href="#doctors" 
+            href="/doctors" 
             className="transition-colors hover:text-primary text-muted-foreground"
           >
             Médecins

@@ -191,12 +191,12 @@ const FeaturedDoctors = () => {
           })}
         </div>
 
-        {/* View All Button */}
         <div className="text-center">
           <Button 
             size="lg" 
             variant="outline"
             className="border-primary text-primary hover:bg-primary hover:text-white"
+            onClick={() => window.location.href = '/doctors'}
           >
             Voir tous les médecins
           </Button>
