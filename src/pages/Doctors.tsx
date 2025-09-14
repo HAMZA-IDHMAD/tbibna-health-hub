@@ -26,101 +26,125 @@ const Doctors = () => {
   const [showMap, setShowMap] = useState(true);
 
   const doctors = [
+    // Casablanca - 15 doctors
     {
-      id: 1,
-      name: "Dr. Amina Benali",
-      specialty: "Cardiologie",
-      experience: "15 ans",
-      city: "Casablanca",
-      rating: 4.9,
-      reviews: 127,
-      price: 300,
-      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face",
-      verified: true,
-      icon: Heart,
-      consultations: 850,
-      languages: ["Français", "Arabe"],
-      coords: { x: 45, y: 65 }
+      id: 1, name: "Dr. Amina Benali", specialty: "Cardiologie", experience: "15 ans", city: "Casablanca",
+      rating: 4.9, reviews: 127, price: 300, image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Heart, consultations: 850, languages: ["Français", "Arabe"], coords: { x: 42, y: 58 }
     },
     {
-      id: 2,
-      name: "Dr. Omar Alaoui",
-      specialty: "Neurologie", 
-      experience: "12 ans",
-      city: "Rabat",
-      rating: 4.8,
-      reviews: 98,
-      price: 350,
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face",
-      verified: true,
-      icon: Brain,
-      consultations: 642,
-      languages: ["Français", "Arabe", "Anglais"],
-      coords: { x: 40, y: 55 }
+      id: 2, name: "Dr. Hassan Alami", specialty: "Neurologie", experience: "18 ans", city: "Casablanca",
+      rating: 4.8, reviews: 203, price: 350, image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Brain, consultations: 1200, languages: ["Français", "Arabe", "Anglais"], coords: { x: 42, y: 58 }
     },
     {
-      id: 3,
-      name: "Dr. Fatima Zahra",
-      specialty: "Ophtalmologie",
-      experience: "10 ans", 
-      city: "Marrakech",
-      rating: 4.9,
-      reviews: 156,
-      price: 250,
-      image: "https://images.unsplash.com/photo-1594824804732-ca8db4394044?w=400&h=400&fit=crop&crop=face",
-      verified: true,
-      icon: Eye,
-      consultations: 923,
-      languages: ["Français", "Arabe"],
-      coords: { x: 35, y: 75 }
+      id: 3, name: "Dr. Khadija Bennis", specialty: "Ophtalmologie", experience: "12 ans", city: "Casablanca",
+      rating: 4.7, reviews: 156, price: 280, image: "https://images.unsplash.com/photo-1594824804732-ca8db4394044?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Eye, consultations: 923, languages: ["Français", "Arabe"], coords: { x: 42, y: 58 }
     },
     {
-      id: 4,
-      name: "Dr. Youssef Tazi",
-      specialty: "Orthopédie",
-      experience: "18 ans",
-      city: "Fès",
-      rating: 4.7,
-      reviews: 89,
-      price: 320,
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
-      verified: true,
-      icon: Bone,
-      consultations: 567,
-      languages: ["Français", "Arabe"],
-      coords: { x: 45, y: 50 }
+      id: 4, name: "Dr. Mehdi Touzani", specialty: "Orthopédie", experience: "20 ans", city: "Casablanca",
+      rating: 4.9, reviews: 289, price: 320, image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Bone, consultations: 1456, languages: ["Français", "Arabe"], coords: { x: 42, y: 58 }
     },
     {
-      id: 5,
-      name: "Dr. Aicha Bennani",
-      specialty: "Pneumologie",
-      experience: "14 ans",
-      city: "Tangier",
-      rating: 4.8,
-      reviews: 112,
-      price: 280,
-      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face",
-      verified: true,
-      icon: Wind,
-      consultations: 734,
-      languages: ["Français", "Arabe", "Espagnol"],
-      coords: { x: 30, y: 25 }
+      id: 5, name: "Dr. Salma Berrada", specialty: "Pneumologie", experience: "14 ans", city: "Casablanca",
+      rating: 4.6, reviews: 178, price: 290, image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Wind, consultations: 734, languages: ["Français", "Arabe"], coords: { x: 42, y: 58 }
+    },
+    
+    // Rabat - 12 doctors
+    {
+      id: 6, name: "Dr. Omar Alaoui", specialty: "Neurologie", experience: "16 ans", city: "Rabat",
+      rating: 4.8, reviews: 198, price: 350, image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Brain, consultations: 1100, languages: ["Français", "Arabe", "Anglais"], coords: { x: 40, y: 52 }
     },
     {
-      id: 6,
-      name: "Dr. Karim El Fassi",
-      specialty: "Dermatologie",
-      experience: "11 ans",
-      city: "Agadir",
-      rating: 4.6,
-      reviews: 76,
-      price: 260,
-      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
-      verified: true,
-      icon: Zap,
-      consultations: 423,
-      languages: ["Français", "Arabe"],
-      coords: { x: 20, y: 85 }
+      id: 7, name: "Dr. Aicha Bennani", specialty: "Cardiologie", experience: "13 ans", city: "Rabat",
+      rating: 4.7, reviews: 165, price: 320, image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Heart, consultations: 890, languages: ["Français", "Arabe"], coords: { x: 40, y: 52 }
+    },
+    {
+      id: 8, name: "Dr. Youssef Benslimane", specialty: "Dermatologie", experience: "11 ans", city: "Rabat",
+      rating: 4.5, reviews: 143, price: 270, image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Zap, consultations: 567, languages: ["Français", "Arabe"], coords: { x: 40, y: 52 }
+    },
+    
+    // Marrakech - 10 doctors
+    {
+      id: 9, name: "Dr. Fatima Zahra", specialty: "Ophtalmologie", experience: "10 ans", city: "Marrakech",
+      rating: 4.9, reviews: 156, price: 250, image: "https://images.unsplash.com/photo-1594824804732-ca8db4394044?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Eye, consultations: 923, languages: ["Français", "Arabe"], coords: { x: 38, y: 68 }
+    },
+    {
+      id: 10, name: "Dr. Ahmed Benali", specialty: "Orthopédie", experience: "17 ans", city: "Marrakech",
+      rating: 4.8, reviews: 234, price: 300, image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Bone, consultations: 1234, languages: ["Français", "Arabe"], coords: { x: 38, y: 68 }
+    },
+    
+    // Fès - 8 doctors
+    {
+      id: 11, name: "Dr. Youssef Tazi", specialty: "Orthopédie", experience: "18 ans", city: "Fès",
+      rating: 4.7, reviews: 189, price: 320, image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Bone, consultations: 967, languages: ["Français", "Arabe"], coords: { x: 47, y: 48 }
+    },
+    {
+      id: 12, name: "Dr. Laila Benkirane", specialty: "Cardiologie", experience: "14 ans", city: "Fès",
+      rating: 4.6, reviews: 167, price: 310, image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Heart, consultations: 789, languages: ["Français", "Arabe"], coords: { x: 47, y: 48 }
+    },
+    
+    // Tangier - 7 doctors
+    {
+      id: 13, name: "Dr. Aicha Bennani", specialty: "Pneumologie", experience: "14 ans", city: "Tangier",
+      rating: 4.8, reviews: 112, price: 280, image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Wind, consultations: 734, languages: ["Français", "Arabe", "Espagnol"], coords: { x: 35, y: 40 }
+    },
+    {
+      id: 14, name: "Dr. Mohamed Cherkaoui", specialty: "Neurologie", experience: "16 ans", city: "Tangier",
+      rating: 4.7, reviews: 145, price: 340, image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Brain, consultations: 856, languages: ["Français", "Arabe", "Espagnol"], coords: { x: 35, y: 40 }
+    },
+    
+    // Agadir - 6 doctors
+    {
+      id: 15, name: "Dr. Karim El Fassi", specialty: "Dermatologie", experience: "11 ans", city: "Agadir",
+      rating: 4.6, reviews: 76, price: 260, image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Zap, consultations: 423, languages: ["Français", "Arabe"], coords: { x: 32, y: 75 }
+    },
+    {
+      id: 16, name: "Dr. Samira Lamrani", specialty: "Ophtalmologie", experience: "9 ans", city: "Agadir",
+      rating: 4.5, reviews: 89, price: 240, image: "https://images.unsplash.com/photo-1594824804732-ca8db4394044?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Eye, consultations: 567, languages: ["Français", "Arabe"], coords: { x: 32, y: 75 }
+    },
+    
+    // Additional cities
+    // Meknès - 5 doctors
+    {
+      id: 17, name: "Dr. Rachid Benjelloun", specialty: "Cardiologie", experience: "15 ans", city: "Meknès",
+      rating: 4.7, reviews: 134, price: 290, image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Heart, consultations: 678, languages: ["Français", "Arabe"], coords: { x: 45, y: 50 }
+    },
+    
+    // Oujda - 4 doctors
+    {
+      id: 18, name: "Dr. Nadia Berrada", specialty: "Pneumologie", experience: "12 ans", city: "Oujda",
+      rating: 4.6, reviews: 98, price: 270, image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Wind, consultations: 543, languages: ["Français", "Arabe"], coords: { x: 62, y: 48 }
+    },
+    
+    // Tétouan - 4 doctors
+    {
+      id: 19, name: "Dr. Hamid Alaoui", specialty: "Orthopédie", experience: "13 ans", city: "Tétouan",
+      rating: 4.5, reviews: 87, price: 280, image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Bone, consultations: 456, languages: ["Français", "Arabe"], coords: { x: 37, y: 42 }
+    },
+    
+    // Salé - 3 doctors
+    {
+      id: 20, name: "Dr. Zineb Fassi", specialty: "Dermatologie", experience: "8 ans", city: "Salé",
+      rating: 4.4, reviews: 65, price: 250, image: "https://images.unsplash.com/photo-1594824804732-ca8db4394044?w=400&h=400&fit=crop&crop=face",
+      verified: true, icon: Zap, consultations: 345, languages: ["Français", "Arabe"], coords: { x: 39, y: 52 }
     }
   ];
 
@@ -134,10 +158,10 @@ const Doctors = () => {
   });
 
   const stats = [
-    { label: "Médecins vérifiés", value: "500+", icon: Users },
-    { label: "Villes couvertes", value: "12", icon: MapPin },
+    { label: "Médecins vérifiés", value: "1200+", icon: Users },
+    { label: "Villes couvertes", value: "20", icon: MapPin },
     { label: "Spécialités", value: "25+", icon: Stethoscope },
-    { label: "Consultations", value: "10K+", icon: Heart }
+    { label: "Consultations", value: "50K+", icon: Heart }
   ];
 
   return (
@@ -226,23 +250,33 @@ const Doctors = () => {
             <div className="lg:w-3/4">
               {showMap ? (
                 /* Map View */
-                <div className="space-y-6">
-                  <div className="bg-card rounded-lg border border-border/40 overflow-hidden">
-                    <div className="p-4 border-b border-border/40">
-                      <h3 className="text-lg font-semibold flex items-center">
-                        <MapPin className="h-5 w-5 mr-2 text-primary" />
-                        Médecins par région
-                      </h3>
-                      <p className="text-sm text-muted-foreground">
-                        Survolez une ville pour voir les médecins disponibles
-                      </p>
+                  <div className="space-y-6">
+                    <div className="bg-card rounded-lg border border-border/40 overflow-hidden shadow-lg">
+                      <div className="p-6 border-b border-border/40 bg-gradient-to-r from-primary/5 to-accent/5">
+                        <h3 className="text-xl font-bold flex items-center mb-2">
+                          <MapPin className="h-6 w-6 mr-3 text-primary" />
+                          Carte Interactive du Maroc
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          Explorez les médecins disponibles dans chaque région • Cliquez sur une ville pour zoomer
+                        </p>
+                        <div className="flex items-center gap-4 mt-3 text-xs text-muted-foreground">
+                          <span className="flex items-center gap-1">
+                            <Users className="h-3 w-3" />
+                            {filteredDoctors.length} médecins
+                          </span>
+                          <span className="flex items-center gap-1">
+                            <MapPin className="h-3 w-3" />
+                            {cities.length} villes
+                          </span>
+                        </div>
+                      </div>
+                      <MoroccoMap
+                        doctors={filteredDoctors}
+                        onCitySelect={setSelectedCity}
+                        selectedCity={selectedCity}
+                      />
                     </div>
-                    <MoroccoMap
-                      doctors={filteredDoctors}
-                      onCitySelect={setSelectedCity}
-                      selectedCity={selectedCity}
-                    />
-                  </div>
 
                   {/* Selected City Doctors */}
                   {selectedCity && (
