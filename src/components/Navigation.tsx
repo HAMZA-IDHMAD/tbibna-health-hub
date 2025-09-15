@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Search, Menu, Phone, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
@@ -15,30 +16,30 @@ const Navigation = () => {
 
         {/* Desktop Navigation */}
         <div className="mr-6 hidden md:flex items-center space-x-6 text-sm font-medium">
-          <a 
-            href="/" 
+          <Link 
+            to="/" 
             className="transition-colors hover:text-primary text-foreground"
           >
             Accueil
-          </a>
+          </Link>
           <a 
             href="#services" 
             className="transition-colors hover:text-primary text-muted-foreground"
           >
             Services
           </a>
-          <a 
-            href="/doctors" 
+          <Link 
+            to="/doctor-landing" 
             className="transition-colors hover:text-primary text-muted-foreground"
           >
             Médecins
-          </a>
-          <a 
-            href="/medicine" 
+          </Link>
+          <Link 
+            to="/medicine" 
             className="transition-colors hover:text-primary text-muted-foreground"
           >
             Pharmacie
-          </a>
+          </Link>
           <a 
             href="#about" 
             className="transition-colors hover:text-primary text-muted-foreground"

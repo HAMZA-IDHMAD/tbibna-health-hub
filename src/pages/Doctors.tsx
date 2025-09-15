@@ -2,7 +2,8 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import DoctorsFilter from "@/components/DoctorsFilter";
 import DoctorCard from "@/components/DoctorCard";
-import MoroccoMap from "@/components/MoroccoMap";
+import MoroccoLeafletMap from "@/components/MoroccoLeafletMap";
+import Pagination from "@/components/Pagination";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -24,6 +25,8 @@ const Doctors = () => {
   const [selectedCity, setSelectedCity] = useState<string | null>(null);
   const [selectedSpecialty, setSelectedSpecialty] = useState<string>("");
   const [showMap, setShowMap] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
   const doctors = [
     // Casablanca - 15 doctors
@@ -157,6 +160,22 @@ const Doctors = () => {
     return true;
   });
 
+  // Pagination logic
+  const totalPages = Math.ceil(filteredDoctors.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const paginatedDoctors = filteredDoctors.slice(startIndex, startIndex + itemsPerPage);
+
+  // Reset page when filters change
+  const handleCityChange = (city: string | null) => {
+    setSelectedCity(city);
+    setCurrentPage(1);
+  };
+
+  const handleSpecialtyChange = (specialty: string) => {
+    setSelectedSpecialty(specialty);
+    setCurrentPage(1);
+  };
+
   const stats = [
     { label: "Médecins vérifiés", value: "1200+", icon: Users },
     { label: "Villes couvertes", value: "20", icon: MapPin },
@@ -241,8 +260,8 @@ const Doctors = () => {
                 specialties={specialties}
                 selectedCity={selectedCity}
                 selectedSpecialty={selectedSpecialty}
-                onCityChange={setSelectedCity}
-                onSpecialtyChange={setSelectedSpecialty}
+                onCityChange={handleCityChange}
+                onSpecialtyChange={handleSpecialtyChange}
               />
             </div>
 
@@ -271,9 +290,9 @@ const Doctors = () => {
                           </span>
                         </div>
                       </div>
-                      <MoroccoMap
+                      <MoroccoLeafletMap
                         doctors={filteredDoctors}
-                        onCitySelect={setSelectedCity}
+                        onCitySelect={handleCityChange}
                         selectedCity={selectedCity}
                       />
                     </div>
@@ -314,10 +333,17 @@ const Doctors = () => {
                     </Badge>
                   </div>
                   <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-                    {filteredDoctors.map((doctor) => (
+                    {paginatedDoctors.map((doctor) => (
                       <DoctorCard key={doctor.id} doctor={doctor} />
                     ))}
                   </div>
+                  
+                  {/* Pagination */}
+                  <Pagination
+                    currentPage={currentPage}
+                    totalPages={totalPages}
+                    onPageChange={setCurrentPage}
+                  />
                 </div>
               )}
             </div>
