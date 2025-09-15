@@ -231,8 +231,11 @@ const MoroccoLeafletMap = ({ doctors, onCitySelect, selectedCity }: MoroccoLeafl
           } else {
             setViewMode('doctors');
             onCitySelect(cityName);
-            // Zoom to city
-            mapInstanceRef.current?.setView([coords[0], coords[1]], 10);
+            // Smooth zoom to city
+            mapInstanceRef.current?.flyTo([coords[0], coords[1]], 10, {
+              duration: 1.5,
+              easeLinearity: 0.1
+            });
           }
         });
       });
@@ -309,7 +312,10 @@ const MoroccoLeafletMap = ({ doctors, onCitySelect, selectedCity }: MoroccoLeafl
       onCitySelect(cityName);
       const coords = cityCoordinates[cityName];
       if (coords && mapInstanceRef.current) {
-        mapInstanceRef.current.setView([coords[0], coords[1]], 10);
+        mapInstanceRef.current.flyTo([coords[0], coords[1]], 10, {
+          duration: 1.5,
+          easeLinearity: 0.1
+        });
       }
     };
 
@@ -322,7 +328,10 @@ const MoroccoLeafletMap = ({ doctors, onCitySelect, selectedCity }: MoroccoLeafl
     setViewMode('cities');
     onCitySelect(null);
     if (mapInstanceRef.current) {
-      mapInstanceRef.current.setView([31.7917, -7.0926], 6);
+      mapInstanceRef.current.flyTo([31.7917, -7.0926], 6, {
+        duration: 1.2,
+        easeLinearity: 0.1
+      });
     }
   };
 
